@@ -1,0 +1,46 @@
+.sidebar-footer {
+    position: relative;
+    /* top: 19vh; */
+    top: 51vh;
+    width: 230px;
+    left: 10px;
+    padding-bottom: 10px;
+}
+.sidebar {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    overflow-y: auto;
+}
+
+.sidebar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+
+
+/* Add these styles to ensure consistent box heights */
+.row.g-4 .col-sm-6.col-xl-3 .bg-secondary {
+    min-height: 120px;  /* Set a minimum height for all boxes */
+    height: 100%;      /* Make all boxes fill their container height */
+}
+
+
+
+/* Ensure text content doesn't break layout */
+.ms-3 {
+    flex: 1;
+    min-width: 0;     /* Prevents text from forcing container growth */
+}
+
+.ms-3 h6 {
+    white-space: nowrap;  /* Keeps numbers on single line */
+    overflow: hidden;
+    text-overflow: ellipsis;  /* Shows ... if text overflows */
+}
+
+/* Keep icons consistent size */
+.fa-3x {
+    flex-shrink: 0;   /* Prevents icon from shrinking */
+    width: 48px;      /* Fixed width for icons */
+    text-align: center;
+}

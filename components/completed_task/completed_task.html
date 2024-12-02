@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>DarkPan - Bootstrap 5 Admin Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="../../img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="../../lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="../../lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- sweet alert 2 -->
+    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- logout animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="../../css/style.css" rel="stylesheet">
+
+    <!-- logout popup stylle sheet -->
+    <link href="../../common/css/logout_popup.css" rel="stylesheet">
+
+    <!-- component style sheet -->
+    <link href="completed_task.css" rel="stylesheet">
+
+    <!-- title bar stylle sheet -->
+    <link href="../../common/css/title_bar.css" rel="stylesheet">
+
+    <!-- dashboard stylle sheet -->
+    <link href="../../common/css/dashboard.css" rel="stylesheet">
+
+    <!-- filter and sort -->
+    <link href="../../common/css/filter_sort.css" rel="stylesheet">
+    <script src="../../common/services/filter_sort.js"></script>
+</head>
+
+<body>
+
+    <!--title bar start -->
+    <div class="title-bar">
+        <span></span>
+        <div class="window-controls">
+            <button onclick="window.electronAPI.minimizeWindow()">—</button>
+            <button onclick="window.electronAPI.maximizeWindow()">▢</button>
+            <button onclick="window.electronAPI.toggleFullScreen()">⤢</button>
+            <button onclick="window.electronAPI.closeWindow()">✕</button>
+        </div>
+    </div>
+    <!--title bar close -->
+
+    <div class="container-fluid position-relative d-flex p-0">
+        <!-- Spinner Start -->
+        <div id="spinner"
+            class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Sidebar Start -->
+        <div class="sidebar pe-4 pb-3">
+            <nav class="navbar bg-secondary navbar-dark">
+                <a href="../dashboard/dashboard.html" class="navbar-brand mx-4 mb-3">
+                    <!-- <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>zonoc</h3> -->
+                    <h3 class="text-primary"><img src="../../img/zonoc_logo_red.png" alt="zonoc"
+                            class="nav-logo me-2">Admin</h3>
+                </a>
+                <div class="d-flex align-items-center ms-4 mb-4">
+                    <div class="position-relative">
+                        <img class="rounded-circle" src="../../img/default_user.png" alt=""
+                            style="width: 40px; height: 40px;">
+                        <div
+                            class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1">
+                        </div>
+                    </div>
+                    <div class="ms-3">
+                        <h6 class="mb-0" id="sidebarUsername">Jhon Doe</h6>
+                        <span>Admin</span>
+                    </div>
+                </div>
+                <div class="navbar-nav w-100">
+                    <a href="../dashboard/dashboard.html" class="nav-item nav-link "><i
+                            class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <!--<div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
+                                class="fa fa-laptop me-2"></i>Elements</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="../../button.html" class="dropdown-item">Buttons</a>
+                            <a href="../../typography.html" class="dropdown-item">Typography</a>
+                            <a href="../../element.html" class="dropdown-item">Other Elements</a>
+                        </div>
+                    </div>
+                    <a href="../../widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
+                    <a href="../../form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
+                    <a href="../../table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>-->
+                    <a href="../pending_task/pending_task.html" class="nav-item nav-link"><i
+                            class="bi bi-check2 me-2"></i>Pending
+                        Task</a>
+                    <a href="../completed_task/completed_task.html" class="nav-item nav-link active"><i
+                            class="bi bi-check2-all me-2"></i>Completed
+                        Task</a>
+
+
+
+
+                    <!-- Footer Start -->
+                    <div class="sidebar-footer mt-auto">
+                        <div class="bg-secondary p-2 w-100">
+                            <div class="text-center small">
+                                &copy; <a href="#">Admin</a>
+                            </div>
+                            <div class="text-center small">
+                                Designed By <a href="https://htmlcodex.com">ABi Systems</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Footer End -->
+
+
+                </div>
+            </nav>
+        </div>
+        <!-- Sidebar End -->
+
+
+        <!-- Content Start -->
+        <div class="content">
+            <!-- Navbar Start -->
+            <nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
+                <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
+                    <h2 class="text-primary mb-0"><i class="fa fa-user-edit"></i></h2>
+                </a>
+                <a href="#" class="sidebar-toggler flex-shrink-0">
+                    <i class="fa fa-bars"></i>
+                </a>
+
+
+
+                <div class="filter-dropdown">
+                    <button class="filter-btn">
+                        <i class="fas fa-filter"></i> Filter
+                        <i class="fas fa-chevron-down ms-2"></i>
+                    </button>
+                    <div class="filter-content">
+                        <div class="filter-item">
+                            <input type="radio" name="filterOption" id="caseId" checked>
+                            <label for="caseId">case ID</label>
+                        </div>
+                        <div class="filter-item">
+                            <input type="radio" name="filterOption" id="taskId">
+                            <label for="taskId">task ID</label>
+                        </div>
+                        <div class="filter-item">
+                            <input type="radio" name="filterOption" id="taskName">
+                            <label for="taskName">task name</label>
+                        </div>
+                        <div class="filter-item">
+                            <input type="radio" name="filterOption" id="supplierName">
+                            <label for="supplierName">sup name</label>
+                        </div>
+                        <div class="filter-item">
+                            <input type="radio" name="filterOption" id="date">
+                            <label for="date">date</label>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="d-none d-md-flex ms-1">
+                    <input class="form-control bg-dark border-0" type="search" placeholder="Search">
+                </form>
+
+
+
+
+                <div class="sort-dropdown">
+                    <button class="sort-btn">
+                        <i class="fas fa-sort"></i>
+                    </button>
+                    <div class="sort-content">
+                        <div class="sort-item">
+                            <i class="fas fa-sort-amount-down-alt"></i>
+                            <span>Ascending</span>
+                        </div>
+                        <div class="sort-item ">
+                            <i class="fas fa-sort-amount-down"></i>
+                            <span>Descending</span>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="navbar-nav align-items-center ms-auto">
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fa fa-envelope me-lg-2"></i>
+                            <span class="d-none d-lg-inline-flex">Message</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
+                            <a href="#" class="dropdown-item">
+                                <div class="d-flex align-items-center">
+                                    <img class="rounded-circle" src="../../img/user.jpg" alt=""
+                                        style="width: 40px; height: 40px;">
+                                    <div class="ms-2">
+                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
+                                        <small>15 minutes ago</small>
+                                    </div>
+                                </div>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <div class="d-flex align-items-center">
+                                    <img class="rounded-circle" src="../../img/user.jpg" alt=""
+                                        style="width: 40px; height: 40px;">
+                                    <div class="ms-2">
+                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
+                                        <small>15 minutes ago</small>
+                                    </div>
+                                </div>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <div class="d-flex align-items-center">
+                                    <img class="rounded-circle" src="../../img/user.jpg" alt=""
+                                        style="width: 40px; height: 40px;">
+                                    <div class="ms-2">
+                                        <h6 class="fw-normal mb-0">Jhon send you a message</h6>
+                                        <small>15 minutes ago</small>
+                                    </div>
+                                </div>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item text-center">See all message</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fa fa-bell me-lg-2"></i>
+                            <span class="d-none d-lg-inline-flex">Notificatin</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
+                            <a href="#" class="dropdown-item">
+                                <h6 class="fw-normal mb-0">Profile updated</h6>
+                                <small>15 minutes ago</small>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <h6 class="fw-normal mb-0">New user added</h6>
+                                <small>15 minutes ago</small>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item">
+                                <h6 class="fw-normal mb-0">Password changed</h6>
+                                <small>15 minutes ago</small>
+                            </a>
+                            <hr class="dropdown-divider">
+                            <a href="#" class="dropdown-item text-center">See all notifications</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <img class="rounded-circle me-lg-2" src="../../img/default_user.png" alt=""
+                                style="width: 40px; height: 40px;">
+                            <span class="d-none d-lg-inline-flex" id="navbarUsername">John Doe</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
+                            <a href="#" class="dropdown-item">My Profile</a>
+                            <a href="#" class="dropdown-item">Settings</a>
+                            <a href="#" class="dropdown-item" onclick="handleLogout()">Log Out</a>
+                        </div>
+                    </div>
+
+
+                </div>
+            </nav>
+            <!-- Navbar End -->
+
+            <!-- Blank Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="row  bg-secondary rounded justify-content-center mx-0">
+                    <div class="col-12"> <!-- Changed from col-sm-12 col-xl-6 to col-12 -->
+                        <div class="bg-secondary rounded p-4">
+                            <h6 class="mb-4">Completed Tasks</h6>
+                            
+          
+                        </div>
+                    </div>
+
+
+                </div>
+                <!-- Blank End -->
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+        </div>
+        <!-- Content End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../lib/chart/chart.min.js"></script>
+    <script src="../../lib/easing/easing.min.js"></script>
+    <script src="../../lib/waypoints/waypoints.min.js"></script>
+    <script src="../../lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="../../lib/tempusdominus/js/moment.min.js"></script>
+    <script src="../../lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="../../lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="../../js/main.js"></script>
+    <script src="../../common/services/logout_function.js"></script>
+    <script src="../../common/services/titleBar_function.js"></script>
+
+
+    <!-- seter current user name -->
+    <script src="../../common/services/current_user.js"></script>
+    <!-- completed task js -->
+    <script src="completed_task.js"></script>
+
+
+
+    <script>
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+.logout-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #191C24;
+    border: 1px solid #2C2F33;
+    border-radius: 4px;
+    padding: 15px 20px;
+    width: 400px;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.logout-popup h2 {
+    color: #fff;
+    font-size: 16px;
+    margin: 0 0 10px 0;
+}
+
+.logout-popup p {
+    color: #6C7293;
+    font-size: 14px;
+    margin: 0 0 15px 0;
+}
+
+.logout-popup .countdown {
+    color: #EB1616;
+    font-weight: bold;
+}
+
+.popup-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.popup-buttons button {
+    padding: 6px 15px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.popup-buttons .cancel-btn {
+    background: #6C7293;
+    color: #fff;
+}
+
+.popup-buttons .confirm-btn {
+    background: #EB1616;
+    color: #fff;
+}
+
+.header-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+
+.logout-icon {
+    font-size: 20px;
+    color: #EB1616;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.info-text {
+    color: #6C7293;
+    font-size: 13px;
+    margin: 8px 0 15px 0;
+    font-style: italic;
+}
+
+
+.logout-icon:hover {
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-20deg); }
+    75% { transform: rotate(20deg); }
+}
